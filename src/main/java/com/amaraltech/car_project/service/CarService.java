@@ -1,25 +1,24 @@
 package com.amaraltech.car_project.service;
 
-import com.amaraltech.car_project.domain.entities.Car;
 import com.amaraltech.car_project.domain.dto.CarRequestDto;
 import com.amaraltech.car_project.domain.dto.CarResponseDto;
+import com.amaraltech.car_project.domain.entities.Car;
 import com.amaraltech.car_project.domain.specs.CarSpecs;
 import com.amaraltech.car_project.repository.CarRepository;
 import jakarta.persistence.EntityNotFoundException;
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.cglib.core.Local;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.DeleteMapping;
-import org.springframework.web.bind.annotation.PathVariable;
 
 import java.time.LocalDateTime;
 import java.time.Year;
-import java.util.*;
+import java.util.HashMap;
+import java.util.Optional;
+import java.util.UUID;
 
 @Service
 @RequiredArgsConstructor

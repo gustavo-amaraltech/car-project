@@ -2,10 +2,7 @@ package com.amaraltech.car_project.controller;
 
 import com.amaraltech.car_project.domain.dto.CarRequestDto;
 import com.amaraltech.car_project.domain.dto.CarResponseDto;
-import com.amaraltech.car_project.domain.entities.Car;
 import com.amaraltech.car_project.service.CarService;
-import jakarta.persistence.EntityNotFoundException;
-import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -17,7 +14,6 @@ import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 import java.net.URI;
 import java.time.LocalDateTime;
 import java.time.Year;
-import java.util.List;
 import java.util.UUID;
 
 @RestController
