@@ -13,7 +13,9 @@ public class CarSpecs {
             if (ObjectUtils.isEmpty(model)) {
                 return null;
             }
-            return criteriaBuilder.equal(root.get("model"), model);
+            return criteriaBuilder.equal(
+                    criteriaBuilder.lower(root.get("model"))
+                    , model.toLowerCase());
         };
     }
 
@@ -22,7 +24,10 @@ public class CarSpecs {
             if (ObjectUtils.isEmpty(brand)) {
                 return null;
             }
-            return criteriaBuilder.equal(root.get("brand"), brand);
+            return criteriaBuilder.equal(
+                    criteriaBuilder.lower(root.get("brand")),
+                    brand.toLowerCase()
+            );
         };
     }
 
@@ -45,7 +50,7 @@ public class CarSpecs {
     }
 
     public static Specification<Car> updatedAtGreaterThanOrEqualTo(LocalDateTime updatedAt) {
-        return (root, query, criteriaBuilder) ->  {
+        return (root, query, criteriaBuilder) -> {
             if (updatedAt == null) {
                 return null;
             }

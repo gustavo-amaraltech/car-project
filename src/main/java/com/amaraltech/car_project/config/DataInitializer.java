@@ -18,6 +18,7 @@ public class DataInitializer {
             if (carRepository.findAll().isEmpty()) {
                 carRepository.save(Car.builder()
                         .brand("Chevrolet")
+                        .vehiclePlate("AAA1A11")
                         .model("Onix")
                         .color("Black")
                         .manufactureYear(Year.of(2014))
@@ -26,6 +27,7 @@ public class DataInitializer {
 
                 carRepository.save(Car.builder()
                         .brand("Citroen")
+                        .vehiclePlate("AAA2A22")
                         .model("C3")
                         .color("Silver")
                         .manufactureYear(Year.of(2014))
@@ -34,6 +36,7 @@ public class DataInitializer {
 
                 carRepository.save(Car.builder()
                         .brand("Renault")
+                        .vehiclePlate("AAA3A33")
                         .model("Sandero")
                         .color("White")
                         .manufactureYear(Year.of(2016))
