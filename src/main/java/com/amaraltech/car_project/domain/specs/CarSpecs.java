@@ -4,6 +4,7 @@ import com.amaraltech.car_project.domain.entities.Car;
 import org.springframework.data.jpa.domain.Specification;
 import org.springframework.util.ObjectUtils;
 
+import java.time.LocalDateTime;
 import java.time.Year;
 
 public class CarSpecs {
@@ -40,6 +41,15 @@ public class CarSpecs {
             }
 
             return criteriaBuilder.lessThanOrEqualTo(root.get("manufactureYear"), end);
+        };
+    }
+
+    public static Specification<Car> updatedAtGreaterThanOrEqualTo(LocalDateTime updatedAt) {
+        return (root, query, criteriaBuilder) ->  {
+            if (updatedAt == null) {
+                return null;
+            }
+            return criteriaBuilder.greaterThanOrEqualTo(root.get("updatedAt"), updatedAt);
         };
     }
 
